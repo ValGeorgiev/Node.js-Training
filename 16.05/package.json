@@ -1,0 +1,32 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValentinAlexandrovGeorgiev/Node.js-Training.git"
+  },
+  "keywords": [
+    "Game"
+  ],
+  "author": "Valentin Georgiev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ValentinAlexandrovGeorgiev/Node.js-Training/issues"
+  },
+  "homepage": "https://github.com/ValentinAlexandrovGeorgiev/Node.js-Training#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.9.8",
+    "serve-favicon": "^2.4.2"
+  },
+  "devDependencies": {
+    "morgan": "^1.8.1"
+  }
+}
