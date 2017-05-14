@@ -1,0 +1,11 @@
+{{#each players}}
+	<div id="{{this.id}}">
+		<a href="/player/{{this.id}}">
+			<span> {{this.name}} </span>
+			<span> {{this.email}} </span>
+			<span> {{this.points}} </span>
+		</a>
+		<button class="delete-player" data-id="{{this.id}}">Delete</button>
+		<hr>
+	</div>
+{{/each}}

@@ -1,0 +1,16 @@
+<div>
+
+	<label>
+		Name: 
+		<input type="text" name="name" value="{{player.name}}">
+	</label>
+	<br>
+	<label>
+		Email: 
+		<input type="email" name="email" value="{{player.email}}">
+	</label>
+	<br>
+	<span>Points: {{player.points}}</span>
+</div>
+
+<button data-id="{{player.id}}" id="edit-player">Edit Player</button>
