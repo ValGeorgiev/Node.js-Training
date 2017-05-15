@@ -70,9 +70,11 @@ function editPlayer(req, res) {
         email: req.body.email
     };
 
+    console.log(req.body.name);
+
     // find player with email
     Player.findOne({
-        email: playerData.email
+        _id: req.params.id
     }, function(err, player) {
         // Always check for error
         if (!!err) {
@@ -98,7 +100,8 @@ function editPlayer(req, res) {
             }
             // Everything is OK, send welcome message to the FE 
             res.send({
-                message: "Details are changed successfully!"
+                message: "Details are changed successfully!",
+                success: true
             });
             return;
         });
@@ -143,13 +146,13 @@ function deletePlayer(req, res) {
 function updatePoints(req, res) {
 
     var playerData = {
-        points: req.body.points,
-        email: req.body.email
+        points: parseInt(req.params.points),
+        id: req.params.id
     };
 
     // find player with email
     Player.findOne({
-        email: playerData.email
+        _id: playerData.id
     }, function(err, player) {
         // Always check for error
         if (!!err) {
@@ -163,9 +166,9 @@ function updatePoints(req, res) {
         }
 
         // Update player with new data
-        player.points = playerData.points || player.points;
+        player.points += playerData.points;
         // Save it to the DB
-        player.save(function(err){
+        player.save(function(err, player){
             // Check for error, if there is an error - return it to the FE
             if (!!err) {
                 res.send(err);
@@ -173,7 +176,9 @@ function updatePoints(req, res) {
             }
             // Everything is OK, send welcome message to the FE 
             res.send({
-                message: "Points are updated!"
+                message: "Points are updated!",
+                success: true,
+                points: player.points
             });
             return;
         });
@@ -200,7 +205,7 @@ function player(app, express) {
     });
 
     // Edit player
-    playerRouter.put('/edit', function(req, res) {
+    playerRouter.post('/edit/:id', function(req, res) {
         editPlayer(req, res);
     });
 
@@ -210,7 +215,7 @@ function player(app, express) {
     });
 
     // Update player points
-    playerRouter.put('/update/points', function(req, res) {
+    playerRouter.put('/update/points/:id/:points', function(req, res) {
         updatePoints(req, res);
     });
 

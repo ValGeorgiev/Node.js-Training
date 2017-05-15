@@ -1,11 +1,11 @@
 {{#each players}}
-	<div id="{{this.id}}">
+	<div class="player-wrapper" id="{{this.id}}">
 		<a href="/player/{{this.id}}">
-			<span> {{this.name}} </span>
-			<span> {{this.email}} </span>
-			<span> {{this.points}} </span>
+			<span class="name"> {{this.name}} </span> |
+			<span class="email"> {{this.email}} </span> |
+			<span class="points"> {{this.points}} </span>
 		</a>
 		<button class="delete-player" data-id="{{this.id}}">Delete</button>
-		<hr>
+		<button class="add-point" data-id="{{this.id}}">+</button>
 	</div>
 {{/each}}
