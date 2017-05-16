@@ -1,3 +1,5 @@
+'use strict';
+
 /*  Require Static API  */
 
 var Player = require('./models/player');
