@@ -1,4 +1,4 @@
 module.exports = {
-	'database': 'mongodb://trainers:trainers123@ds139801.mlab.com:39801/nodejs-training',
+	'database': 'mongodb://pravets:pravets123@ds143141.mlab.com:43141/game-pravets-demo',
 	'port': process.env.PORT || 5511
 };

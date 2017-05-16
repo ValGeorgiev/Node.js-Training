@@ -35,7 +35,7 @@ PlayerSchema.path('email').validate(function (email) {
 });
 
 PlayerSchema.path('name').validate(function (name) {
-    return name.length >= 5 && name.length <= 30;
+    return name.length >= 4 && name.length <= 30;
 });
 
 PlayerSchema.path('password').validate(function (password) {

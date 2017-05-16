@@ -1,7 +1,6 @@
 'use strict';
 
 /*  Require Static API  */
-
 var Player = require('./models/player');
 
 
@@ -65,7 +64,6 @@ module.exports = function(app) {
 	});
 
 	app.use(function(req, res) {
-		console.log('Wrong url');
 		res.status(404).redirect('/');	
 	});
 
